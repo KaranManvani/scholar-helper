@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scholarships</title>
+    <!-- <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/table.css"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/general.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/table.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/pagination.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css')}}">
+
+
+
+    <!--Fira Code Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Roboto Serif Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,500;1,8..144,700&display=swap" rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+  </head>
+  
+  <body class="scholarship-body">
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left-section">
+        <!-- <img class="header-menu-logo" src="{{ url_for('static', filename='icons/Hamburger-menu.svg')}}"> -->
+        <!-- <img class="header-title-SHL" src="icons/Scholarship-Hat-Logo.svg"> -->
+        <img class="header-title-SHL" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo-Solid.svg')}}">
+        <div class="header-title">Scholar Helper</div>
+      </div>
+      <div class="header-right-section">
+        <!-- <a href="index.html" class="">Home</a>
+        <a href="scholarships.html" class="header-active">Scholarships</a>
+        <a href="about.html" class="">About</a> -->
+
+        <a href="index" class="">
+          <div class="header-RS-icon-container">
+            <!-- Home -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/home-icon.svg')}}">
+            <div class="tooltip">Home</div>
+          </div>
+        </a>
+        
+        <a href="about" class="">
+          <div class="header-RS-icon-container">
+            <!-- About -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/AboutUs-Info-Icon.svg')}}">
+            <div class="tooltip">About</div>
+          </div>
+        </a>
+        
+        <a href="search" class="header-active">
+          <div class="header-RS-icon-container">
+            <!-- Search Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Search-icon.svg')}}">
+            <div class="tooltip">Search</div>
+          </div>
+        </a>
+
+        <a href="scholarships" class="">
+          <div class="header-RS-icon-container">
+            <!-- Browse Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo.svg')}}">
+            <div class="tooltip">Scholarships</div>
+          </div>
+        </a>
+        
+        <a href="contact_us" class="header-RS-ContactUs-icon">
+          <div class="header-RS-icon-container">
+            <!-- Contact Us -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/About-Us-icon.svg')}}">
+            <div class="tooltip">Contact Us</div>
+          </div>
+        </a>
+        
+
+      </div>
+    </header>
+
+
+    <!-- Main Body Content -->
+    <main>
+      <!-- <section class="table-conatiner"> -->
+      <section class="table-container">
+        <h1 class="table-container-heading">Search Scholarships</h1>
+        
+
+        <!-- <form method="get" action="/government_funded"> -->
+        <form method="get" action="#">
+        <!-- <form method="post"> -->
+          <fieldset>
+            <legend>Search, Sort and Filter</legend>
+            <!-- <label for="keyword">Scholarship</label> -->
+            {% if request.args.get('keyword') %}
+              <input type="text" id="keyword" name="keyword" value="{{ request.args.get('keyword') }}" placeholder="Enter the name of scholarship...">
+            {% else %}
+              <input type="text" id="keyword" name="keyword" placeholder="Enter the name of scholarship...">
+            {% endif %}
+          <select id="category" name="category">
+              <option value="no_cat">Select Category :- </option>
+              <option value="international">International Scholarships</option>
+              <option value="international_always_open">International Scholarships Always Open</option>
+              <option value="girls">Scholarships for Women and Girls</option>
+              <option value="government_upcoming">Government Upcoming Scholarships</option>
+          </select>
+          <select id="sort" name="sort">
+              <option value="no_sort">Select Order :- </option>
+              <option value="title_ascending">Title Ascending</option>
+              <option value="title_descending">Title Descending</option>
+          </select>
+          <input type="submit" value="Apply">
+        </fieldset>
+        </form>
+
+        {% if Data %}
+        {% if Data.items %}
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Scholarship Name</th>
+              <th>Eligibility</th>
+              <th>Benefits</th>
+              <th>Region</th>
+              <th>Deadline</th>
+              <th>Source</th>
+              <th>Category</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            
+            
+            {% for schols in Data.items %}
+              {#
+                {% include 'display.html' %}
+              #}
+              <tr>
+                <td>{{ loop.index + Data.per_page*(Data.page-1) }}</td>
+                <td>{{ schols.title }}</td>
+                <td>{{ schols.eligibility }}</td>
+                <td>{{ schols.benefits }}</td>
+                <td>{{ schols.region }}</td>
+                <td>{{ schols.deadline }}</td>
+                <td>{{ schols.source }}</td>
+                <td>{{ schols.category }}</td>
+                <td><a href="{{ schols.url }}" target="_blank" >Click Here</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+
+        </table>
+        <div class="pagination-container">
+          <div class="pagination">
+            {% if Data.has_prev %}
+                <!-- <span> -->
+                    <a class='page-number' href="{{ url_for('search', keyword=Keyword, category=Cat, sort=Sort, page=Data.prev_num) }}">
+                      &laquo;
+                    </a>
+                <!-- </span> -->
+            {% endif %}
+        
+            {% for number in Data.iter_pages() %}
+                {% if number %}
+                    {% if Data.page != number %}
+                        <!-- <span> -->
+                          <a class='page-number'
+                              href="{{ url_for('search', keyword=Keyword, category=Cat, sort=Sort, page=number) }}">
+                          {{ number }}
+                          </a>
+                        <!-- </span> -->
+                    {% else %}
+                        <a class='current-page-number'>{{ number }}</a>
+                    {% endif %}
+                {% else %}
+                    <span class='page-number ellipsis'>…</span>
+                {% endif %}
+                
+            {% endfor %}
+        
+            {% if Data.has_next %}
+                <!-- <span> -->
+                    <a class='page-number'
+                        href="{{ url_for('search', keyword=Keyword, category=Cat, sort=Sort, page=Data.next_num) }}">
+                        &raquo;
+                    </a>
+                <!-- </span> -->
+            {% endif %}
+          </div>
+        </div>
+
+        {% else %}
+          <h2>No Data Found for keyword :- {{ Keyword }}</h2>
+        {% endif %}
+        {% endif %}
+
+        
+      </section>
+    </main>
+
+
+  </body>
+</html>

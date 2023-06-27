@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scholar Helper - Homepage</title>
+    <!-- <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/index.css"> -->
+
+    
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/general.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css')}}">
+    
+    <!--Fira Code Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Roboto Serif Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,500;1,8..144,700&display=swap" rel="stylesheet">
+
+
+
+  </head>
+  
+  <body class="index-body">
+    
+    <!-- Header -->
+
+    <!-- TODO : Hide the header-menu-logo without affecting the position, at line 34. -->
+    <!-- visibility: hidden dosent work
+          hidden property clears the position
+          cant use inline, or internal css cause external already linked .-->
+    <header class="header">
+      <div class="header-left-section">
+        <!-- <img class="header-menu-logo index-header-menu-logo" src="{{ url_for('static', filename='icons/Hamburger-menu.svg')}}"> -->
+        <!-- <img class="header-title-SHL" src="icons/Scholarship-Hat-Logo.svg"> -->
+        <img class="header-title-SHL" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo-Solid.svg')}}">
+        <div class="header-title">Scholar Helper</div>
+      </div>
+      <div class="header-right-section">
+        <!-- <a href="index.html" class="header-active">Home</a>
+        <a href="scholarships.html" class="">Scholarships</a>
+        <a href="about.html" class="">About</a> -->
+
+        <a href="index" class="header-active">
+          <div class="header-RS-icon-container">
+            <!-- Home -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/home-icon.svg')}}">
+            <div class="tooltip">Home</div>
+          </div>
+        </a>
+        
+        <a href="about" class="">
+          <div class="header-RS-icon-container">
+            <!-- About -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/AboutUs-Info-Icon.svg')}}">
+            <div class="tooltip">About</div>
+          </div>
+        </a>
+        
+        <a href="search" class="">
+          <div class="header-RS-icon-container">
+            <!-- Search Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Search-icon.svg')}}">
+            <div class="tooltip">Search</div>
+          </div>
+        </a>
+
+        <a href="scholarships" class="">
+          <div class="header-RS-icon-container">
+            <!-- Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo.svg')}}">
+            <div class="tooltip">Scholarships</div>
+          </div>
+        </a>
+        
+        <a href="contact_us" class="header-RS-ContactUs-icon">
+          <div class="header-RS-icon-container">
+            <!-- Contact Us -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/About-Us-icon.svg')}}">
+            <div class="tooltip">Contact Us</div>
+          </div>
+        </a>
+        
+      </div>
+    </header>
+
+    <!-- Main Body Content -->
+    <main class="index_main">
+
+      <div class="index_page_main_container">
+
+        <div class="motto_container">
+
+          <div class="motto_child_container">
+
+            <div class="subtitle_container">
+              <h1>A <span>GUIDE</span> TO THE <br> PATH OF <span>SUCCESS</span>! </h1>
+            </div>
+  
+            <div class="subtitle_image_container">
+              <img src="{{ url_for('static', filename='img/motto_success_img_1-removebg.png')}}" alt="">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="education_container">
+
+          <div class="education_child_container">
+
+            <h2> <span>education</span> and its <span>importance</span> </h2>
+  
+            <p>
+              <span>"Education is the key to unlock the golden door of freedom" <br> - George Washington Carver</span> 
+            </p>
+  
+            <p>
+              Golden door of freedom is about the stability, financial security, self dependency and economic growth.
+            </p>
+  
+            <p>
+              These heavy words are in actual very important. One must have stability in their life so the person will succeed in learning the lessons of management. Education provides financial security which ensures that you are capable enough to fulfill your needs. Especially in today's world, being independent is the formost and prime thing and self dependency is acquired by being educated and it is something that no one can take away from you. Thus an educated society contributes in building the economic growth of one's and also on a national level.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="quote_container">
+
+          <div class="quote_child_container">
+
+            <h2> <span>Quotes</span> on <span>education</span> </h2>
+  
+            <div class="quote_block_container">
+  
+              <div class="quote_blocks">
+                <div class="QB_text_container">
+                  <div class="quote">
+                    <p>
+                      <q>Education is the key to unlock the golden door of freedom.</q> 
+                    </p>
+                  </div>
+                  <div class="author">
+                    <p>
+                      - George Washington Carver
+                    </p>
+                  </div>
+  
+                </div>
+  
+                <img src="{{ url_for('static', filename='img/George-Washington-Carver-quote-1.png')}}" alt="">
+              </div>
+  
+              <div class="quote_blocks">
+                <img src="{{ url_for('static', filename='img/APJ-Abdul-Kalam-img2-quote-2-cropped.jpg')}}" alt="">
+                <div class="QB_text_container">
+                  <div class="quote">
+                    <p>
+                      <q>Education is the most powerful weapon which you can use to change the world.</q> 
+                    </p>
+                  </div>
+                  <div class="author">
+                    <p>
+                      - A.P.J. Abdul Kalam
+                    </p>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+              <div class="quote_blocks">
+                <div class="QB_text_container">
+                  <div class="quote">
+                    <p>
+                      <q>A good education is a foundation for a better future.</q>
+                    </p>
+                  </div>
+                  <div class="author">
+                    <p>
+                      - Elizabeth Warren
+                    </p>
+                  </div>
+  
+                </div>
+  
+                <img src="{{ url_for('static', filename='img/Elizabeth-warren-img1-quote3-cropped.jpg')}}" alt="">
+              </div>
+
+              <div class="quote_blocks">
+                <img src="{{ url_for('static', filename='img/Benjamin-Franklin-img1-quote4-cropped.png')}}" alt="">
+                <div class="QB_text_container">
+                  <div class="quote">
+                    <p>
+                      <q>An investment in knowledge pays the best interest.</q> 
+                    </p>
+                  </div>
+                  <div class="author">
+                    <p>
+                      - Benjamin Franklin
+                    </p>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            
+          </div>
+        </div>
+
+        <div class="problem_container">
+
+          <div class="problem_child_container">
+
+            <h2>The <span>Problem</span></h2>
+  
+            <p>
+              These days students are not observed under the eyes of their merits but the one who is financially rich, enjoys more benefits though he or she has not excelled. The students are capable enough but dont have financial support because they can't afford it to compete the students who are financially strong and this is the biggest problem faced by the students.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="solution_container">
+
+          <div class="solution_child_container">
+
+            <h2>The <span>Solution</span></h2>
+  
+            <p>
+              These days solution to every problem is <span>TO BE EDUCATED</span>. Scholarships will help those students to make their dreams come true and fly high in the sky. With the help of getting the scholarship the students can fulfill their dreams and can aquire the golden door of freedom.
+            </p>
+
+          </div>
+        
+        </div>
+
+        <div class="learn_more_container">
+
+          <div class="learn_more_child_container">
+
+            <h2> <span>Know</span> more about <span>us</span></h2>
+  
+            <p>
+              Learn more about Scholarships, Scholar Helper and what it provides.
+            </p>
+
+            <div class="button_container">
+              <a href="about">
+                <button href="about">
+                  EXPLORE!
+                </button>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+
+
+      </div>
+      
+    </main>
+  </body>
+</html>

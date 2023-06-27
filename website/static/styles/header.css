@@ -1,0 +1,133 @@
+.header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(190, 190, 190);
+  z-index: 100;
+}
+
+.header-left-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.header-right-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 15px;
+  margin-right: 32px;
+}
+
+.header-title {
+  color: black;
+  /* margin-left: 60px; */
+  font-size: 28px;
+  font-weight: 900;
+  font-style: italic;
+  font-family: 'Fira Code', 'Roboto Serif', serif, monospace;
+}
+
+/* .header-left-section img {
+
+} */
+
+.header-menu-logo {
+  margin-left: 77px;
+  height: 24px;
+}
+
+.index-header-menu-logo {
+  visibility: hidden;
+}
+
+.about-header-menu-logo {
+  visibility: hidden;
+}
+
+.header-title-SHL {
+  height: 40px;
+  margin-right: 30px;
+  /* margin-left: 110px; */
+  margin-left: 30px;
+}
+
+.header-right-section a {
+  text-decoration: none;
+  transition: background-color 0.15s, transform 0.15s;
+  color: black;
+  /* float: left; */
+  padding: 8px 8px;
+  font-size: 18px;
+  font-weight: 250;
+  font-family: 'Fira Code', 'Roboto Serif', serif, monospace;
+  border-radius: 31px;
+}
+
+.header-right-section a:hover {
+  /* background-color: rgb(245, 245, 245); */
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: scale(1.125);
+  /* color: black; */
+}
+
+.header-active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* .header-RS-ContactUs-icon {
+  margin-right: 60px;
+} */
+
+/* Comment Out the below 11 lines if you dont want icons on header of government_funded.html */
+.header-right-section a img{
+  height: 24px;
+  text-decoration: none;
+  transition: background-color 0.15s;
+  color: black;
+  /* float: left; */
+  /* padding: 16px 26px; */
+  /* font-size: 18px; */
+  /* font-weight: 250; */
+  font-family: 'Fira Code', 'Roboto Serif', serif, monospace;
+  /* border-radius: 15px; */
+}
+
+.header-RS-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.header-RS-icon-container .tooltip {
+  /* font-family: 'Roboto', Arial; */
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 14px;
+  bottom: -55px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.header-RS-icon-container:hover .tooltip {
+  opacity: 1;
+}

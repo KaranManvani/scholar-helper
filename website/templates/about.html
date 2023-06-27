@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <!-- <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/about.css"> -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/general.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about.css')}}">
+
+    <!--Fira Code Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Roboto Serif Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,500;1,8..144,700&display=swap" rel="stylesheet">
+
+
+
+  </head>
+  
+  <body>
+    
+    <!-- Header -->
+
+    <!-- TODO : Hide the header-menu-logo without affecting the position, at line 34. -->
+    <!-- visibility: hidden dosent work
+          hidden property clears the position
+          cant use inline, or internal css cause external already linked .-->
+    <header class="header">  
+      <div class="header-left-section">
+        <!-- <img class="header-menu-logo about-header-menu-logo" src="{{ url_for('static', filename='icons/Hamburger-menu.svg')}}"> -->
+        <!-- <img class="header-title-SHL" src="icons/Scholarship-Hat-Logo.svg"> -->
+        <img class="header-title-SHL" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo-Solid.svg')}}">
+        <div class="header-title">Scholar Helper</div>
+      </div>
+      <div class="header-right-section">
+        <!-- <a href="index.html" class="">Home</a>
+        <a href="scholarships.html" class="">Scholarships</a>
+        <a href="about.html" class="header-active">About</a> -->
+
+
+        <a href="index" class="">
+          <div class="header-RS-icon-container">
+            <!-- Home -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/home-icon.svg')}}">
+            <div class="tooltip">Home</div>
+          </div>
+        </a>
+        
+        <a href="about" class="header-active">
+          <div class="header-RS-icon-container">
+            <!-- About -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/AboutUs-Info-Icon.svg')}}">
+            <div class="tooltip">About</div>
+          </div>
+        </a>
+        
+        <a href="search" class="">
+          <div class="header-RS-icon-container">
+            <!-- Search Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Search-icon.svg')}}">
+            <div class="tooltip">Search</div>
+          </div>
+        </a>
+
+        <a href="scholarships" class="">
+          <div class="header-RS-icon-container">
+            <!-- Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo.svg')}}">
+            <div class="tooltip">Scholarships</div>
+          </div>
+        </a>
+        
+        <a href="contact_us" class="header-RS-ContactUs-icon">
+          <div class="header-RS-icon-container">
+            <!-- Contact Us -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/About-Us-icon.svg')}}">
+            <div class="tooltip">Contact Us</div>
+          </div>
+        </a>
+        
+      </div>
+    </header>
+
+    <!-- Main Body Content -->
+    <main>
+
+      <div class="main_container">
+        <div class="about_container">
+          <div class="about_child_container">
+
+            <h2>About <span>Scholar-Helper</span> </h2>
+            <p>
+              Scholarship is for those students who deserves on the basis of their excellence. These days students are not observed under the eyes of their merits but the one who is  financially rich, enjoys more benefits though he or she has not excelled. And this is the biggest problem in today's world and thus making those students aware about our platform and providing them their needs which they deserve is the main moto.
+            </p>
+            
+            <p>
+              As it is said that <span style="text-transform:capitalize;">success comes to those who work hard</span>  which truely motivates the students to work hard and achieve  their goals. But the sever problem in our education system the students are demotivated and loose hope. Our platform is for those hardworking students who want to succeed in their life but want that financial support to make their dreams possible.
+            </p>
+            
+            <p>
+              Our platform will provide information about the required data that you provide, and in return you get the best suited scholarship schemes which are filtered for you according to your needs and showcase at your finger tips. 
+              There are different types of scholarships with various schemes, such as <span>Government Funded</span> Scholarships, <span>Private Funded</span> Scholarships,  Scholarships for <span>Women</span> and <span>International</span> Scholarships.
+            </p>
+          </div>
+
+
+        </div>
+
+
+        <div class="learn_more_container">
+
+          <div class="learn_more_child_container">
+
+            <h2> <span>Looking</span> for <span>Scholarships?</span></h2>
+  
+            <p>
+              Search, Find and Browse Scholarships.
+            </p>
+
+            <div class="button_container">
+              <a href="search">
+                <button href="search">
+                  SEARCH!
+                </button>
+              </a>
+              <a href="scholarships">
+                <button href="scholarships">
+                  BROWSE!
+                </button>
+              </a>
+            </div>
+
+            
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </main>
+
+
+  </body>
+</html>

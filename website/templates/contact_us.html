@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us / Reach US</title>
+    <!-- <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/contactUs.css"> -->
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/general.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/contactUs.css')}}">
+    
+
+    <!--Fira Code Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Roboto Serif Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,500;1,8..144,700&display=swap" rel="stylesheet">
+
+
+
+  </head>
+  
+  <body>
+    
+    <!-- Header -->
+
+    <!-- TODO : Hide the header-menu-logo without affecting the position, at line 34. -->
+    <!-- visibility: hidden dosent work
+          hidden property clears the position
+          cant use inline, or internal css cause external already linked .-->
+    <header class="header">  
+      <div class="header-left-section">
+        <!-- <img class="header-menu-logo about-header-menu-logo" src="{{ url_for('static', filename='icons/Hamburger-menu.svg')}}"> -->
+        <!-- <img class="header-title-SHL" src="icons/Scholarship-Hat-Logo.svg"> -->
+        <img class="header-title-SHL" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo-Solid.svg')}}">
+        <div class="header-title">Scholar Helper</div>
+      </div>
+      <div class="header-right-section">
+        <!-- <a href="index.html" class="">Home</a>
+        <a href="scholarships.html" class="">Scholarships</a>
+        <a href="about.html" class="header-active">About</a> -->
+
+
+        <a href="index" class="">
+          <div class="header-RS-icon-container">
+            <!-- Home -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/home-icon.svg')}}">
+            <div class="tooltip">Home</div>
+          </div>
+        </a>
+        
+        <a href="about" class="">
+          <div class="header-RS-icon-container">
+            <!-- About -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/AboutUs-Info-Icon.svg')}}">
+            <div class="tooltip">About</div>
+          </div>
+        </a>
+
+        <a href="search" class="">
+          <div class="header-RS-icon-container">
+            <!-- Search Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Search-icon.svg')}}">
+            <div class="tooltip">Search</div>
+          </div>
+        </a>
+
+        <a href="scholarships" class="">
+          <div class="header-RS-icon-container">
+            <!-- Scholarships -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo.svg')}}">
+            <div class="tooltip">Scholarships</div>
+          </div>
+        </a>
+        
+        <a href="contact_us" class="header-RS-ContactUs-icon header-active">
+          <div class="header-RS-icon-container">
+            <!-- Contact Us -->
+            <img class="header-RS-icons" src="{{ url_for('static', filename='icons/About-Us-icon.svg')}}">
+            <div class="tooltip">Contact Us</div>
+          </div>
+        </a>
+        
+      </div>
+    </header>
+
+    <!-- Main Body Content -->
+    <main>
+      <div class="contact-us-container">
+        <div class="contact-us-heading-container" >
+          <h1>OUR TEAM</h1>
+          <h3>Meet the people who brought you this platform working, syncing, and kicking!</h3>
+        </div>
+
+        <div class="main-member-container">
+          <div class="member-containers">
+            <img src="{{ url_for('static', filename='img/images.png')}}" alt="">
+            <span class="member-name">Karan Manvani</span>
+            <!-- <span style="color: rgb(162, 162, 162); margin-top: 5px; font-size: 16px;">CEO, Founder and Core Developer</span> -->
+            <span class="member-designation">Co Founder <span>&#38;</span> Co Developer</span>
+          </div>
+          <div class="member-containers">
+            <img src="{{ url_for('static', filename='img/images.png')}}" alt="">
+            <span class="member-name">Khushi Doshi</span>
+            <!-- <span style="color: rgb(162, 162, 162); margin-top: 5px; font-size: 16px;">Project Manager and UI Developer</span> -->
+            <span class="member-designation">Co Founder <span>&#38;</span> Co Developer</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+  </body>
+</html>
