@@ -44,8 +44,7 @@ def create_app():
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     # dialect://username:password@host:port/database
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
-    # app.config['SQLALCHEMY_ENGINE_OPTIONS'] = { "connect_args" : {"ssl" : {"ca": "/etc/ssl/cert.pem"}}}
-    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = { "connect_args" : {"ssl" : {"ca": "website\cacert-2023-05-30.pem"}}}
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = { "connect_args" : {"ssl" : {"ca": "/etc/ssl/cert.pem"}}}
     db.init_app(app)
 
 
