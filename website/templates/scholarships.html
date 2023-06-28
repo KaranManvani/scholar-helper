@@ -37,15 +37,10 @@
     <!-- Header -->
     <header class="header">
       <div class="header-left-section">
-        <!-- <img class="header-menu-logo" src="{{ url_for('static', filename='icons/Hamburger-menu.svg')}}"> -->
-        <!-- <img class="header-title-SHL" src="icons/Scholarship-Hat-Logo.svg"> -->
         <img class="header-title-SHL" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo-Solid.svg')}}">
         <div class="header-title">Scholar Helper</div>
       </div>
       <div class="header-right-section">
-        <!-- <a href="index.html" class="">Home</a>
-        <a href="scholarships.html" class="header-active">Scholarships</a>
-        <a href="about.html" class="">About</a> -->
 
         <a href="index" class="">
           <div class="header-RS-icon-container">
@@ -92,60 +87,15 @@
     </header>
 
 
-    <!-- Nav-Side Bar -->
-
-    <!-- TODO : Implement .sidebar-active classes with anchor tag to link html files -->
-    <!-- <nav class="sidebar">
-      <a href="scholarships" class="">
-        <div class="sidebar-links">
-          <img src="{{ url_for('static', filename='icons/Search-Icon.svg')}}">
-          <div>Search</div>
-        </div>
-      </a>
-
-      <a href="government_funded" class="">
-        <div class="sidebar-links sidebar-active">
-          <img src="{{ url_for('static', filename='icons/Gov-Fun-Sch.svg')}}">
-          <div>Government Funded</div>
-        </div>
-      </a>
-      
-      <a href="private_funded" class="">
-        <div class="sidebar-links">
-          <img src="{{ url_for('static', filename='icons/Pri-Fun-Sch.svg')}}">
-          <div>Private Funded</div>
-        </div>
-      </a>
-      
-      <a href="scholarships_for_women" class="">
-        <div class="sidebar-links">
-          <img src="{{ url_for('static', filename='icons/Female-logo.svg')}}">
-          <div>Scholarships for Women</div>
-        </div>
-      </a>
-      
-      <a href="international_scholarships" class="">
-        <div class="sidebar-links">
-          <img src="{{ url_for('static', filename='icons/International-Sch-Logo.svg')}}">
-          <div>International Scholarships</div>
-        </div>
-      </a>
-      
-
-    </nav> -->
-
     <!-- Main Body Content -->
     <main>
       <section class="table-container">
         <h1 class="table-container-heading">Browse Scholarships</h1>
         
 
-        <!-- <form method="get" action="/government_funded"> -->
         <form method="get" action="#">
-        <!-- <form method="post"> -->
           <fieldset>
           <legend>Sort and Filter</legend>
-          <!-- <div> -->
           <select id="category" name="category">
               <option value="no_cat">Select Category :- </option>
               <option value="international">International Scholarships</option>
@@ -158,11 +108,9 @@
               <option value="title_ascending">Title Ascending</option>
               <option value="title_descending">Title Descending</option>
           </select>
-          <!-- </div> -->
           <input type="submit" value="Apply">
         </fieldset>
         </form>
-        <!--<h4 class="table-container-note">Please kindly note that the values shown in the Amount Provided column are in Indian Rupees!</h4>-->
         
         {% if Data.items %}
         
@@ -173,7 +121,6 @@
               <th>Scholarship Name</th>
               <th>Eligibility</th>
               <th>Benefits</th>
-              <!-- <th class="amount-provided-column-data">Benefits</th> -->
               <th>Region</th>
               <th>Deadline</th>
               <th>Source</th>
@@ -205,22 +152,18 @@
         <div class="pagination-container">
         <div class="pagination">
           {% if Data.has_prev %}
-              <!-- <span> -->
                   <a class='page-number' href="{{ url_for('scholarships', category=Cat, sort=Sort, page=Data.prev_num) }}">
                       &laquo;
                   </a>
-              <!-- </span> -->
           {% endif %}
       
           {% for number in Data.iter_pages() %}
               {% if number %}
                   {% if Data.page != number %}
-                      <!-- <span> -->
                         <a class='page-number'
                             href="{{ url_for('scholarships', category=Cat, sort=Sort, page=number) }}">
                         {{ number }}
                         </a>
-                      <!-- </span> -->
                   {% else %}
                       <a class='current-page-number'>{{ number }}</a>
                   {% endif %}
@@ -231,12 +174,10 @@
           {% endfor %}
       
           {% if Data.has_next %}
-              <!-- <span> -->
                   <a class='page-number'
                       href="{{ url_for('scholarships', category=Cat, sort=Sort, page=Data.next_num) }}">
                       &raquo;
                   </a>
-              <!-- </span> -->
           {% endif %}
         </div>
         </div>

@@ -37,15 +37,10 @@
     <!-- Header -->
     <header class="header">
       <div class="header-left-section">
-        <!-- <img class="header-menu-logo" src="{{ url_for('static', filename='icons/Hamburger-menu.svg')}}"> -->
-        <!-- <img class="header-title-SHL" src="icons/Scholarship-Hat-Logo.svg"> -->
         <img class="header-title-SHL" src="{{ url_for('static', filename='icons/Scholarship-Hat-Logo-Solid.svg')}}">
         <div class="header-title">Scholar Helper</div>
       </div>
       <div class="header-right-section">
-        <!-- <a href="index.html" class="">Home</a>
-        <a href="scholarships.html" class="header-active">Scholarships</a>
-        <a href="about.html" class="">About</a> -->
 
         <a href="index" class="">
           <div class="header-RS-icon-container">
@@ -99,12 +94,9 @@
         <h1 class="table-container-heading">Search Scholarships</h1>
         
 
-        <!-- <form method="get" action="/government_funded"> -->
         <form method="get" action="#">
-        <!-- <form method="post"> -->
           <fieldset>
             <legend>Search, Sort and Filter</legend>
-            <!-- <label for="keyword">Scholarship</label> -->
             {% if request.args.get('keyword') %}
               <input type="text" id="keyword" name="keyword" value="{{ request.args.get('keyword') }}" placeholder="Enter the name of scholarship...">
             {% else %}
@@ -168,38 +160,32 @@
         <div class="pagination-container">
           <div class="pagination">
             {% if Data.has_prev %}
-                <!-- <span> -->
                     <a class='page-number' href="{{ url_for('search', keyword=Keyword, category=Cat, sort=Sort, page=Data.prev_num) }}">
                       &laquo;
                     </a>
-                <!-- </span> -->
             {% endif %}
         
             {% for number in Data.iter_pages() %}
                 {% if number %}
                     {% if Data.page != number %}
-                        <!-- <span> -->
                           <a class='page-number'
                               href="{{ url_for('search', keyword=Keyword, category=Cat, sort=Sort, page=number) }}">
                           {{ number }}
                           </a>
-                        <!-- </span> -->
                     {% else %}
                         <a class='current-page-number'>{{ number }}</a>
                     {% endif %}
                 {% else %}
-                    <span class='page-number ellipsis'>…</span>
+                    <a class='page-number ellipsis'>…</a>
                 {% endif %}
                 
             {% endfor %}
         
             {% if Data.has_next %}
-                <!-- <span> -->
                     <a class='page-number'
                         href="{{ url_for('search', keyword=Keyword, category=Cat, sort=Sort, page=Data.next_num) }}">
                         &raquo;
                     </a>
-                <!-- </span> -->
             {% endif %}
           </div>
         </div>
